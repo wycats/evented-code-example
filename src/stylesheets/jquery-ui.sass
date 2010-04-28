@@ -1,0 +1,128 @@
+@import "compass/css3/border-radius"
+@import "compass/utilities/general/hacks"
+@import "compass/utilities/general/clearfix"
+
+@mixin ui-tabs
+  +ui-widget
+  +ui-widget-content
+  +border-radius(4px)
+  +has-layout
+  background: #fff
+  position: relative
+  padding: 0.2em
+  border: 0px none
+  +border-radius(0)
+  ul
+    +ui-widget-header
+    +ui-tabs-nav
+    li.ui-tabs-selected
+      +ui-state-default
+      +ui-state-active
+      cursor: pointer
+      margin-bottom: 0
+      padding-bottom: 1px
+      border-color: #a8a8a8
+      border-bottom: 0
+    li.ui-state-disabled
+      +ui-state-disabled
+
+@mixin ui-widget-header
+  border: 1px solid #8ab0c6
+  background: #83b0ca url(images/large_blue_gradient.png) 50% 50% repeat-x
+  color: #fff
+  font-weight: bold
+  a
+    color: #fff
+
+@mixin ui-tabs-selected
+  margin-bottom: 0
+  padding-bottom: 1px
+
+@mixin ui-state-default
+  border: 1px solid #ccc
+  background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x
+  font-weight: bold
+  color: #5F83B9
+  a, a:link, a:visited
+    color: #1c94c4
+    text-decoration: none
+
+@mixin ui-tabs-panel
+  +border-radius(0)
+  +ui-widget-content
+  +border-bottom-radius(4px)
+  display: block
+  border: 0
+  padding: 1em 1.4em
+  background: none
+  font-size: 12px
+  border-color: #a8a8a8
+  border-width: 0 1px 1px 1px
+  border-style: solid
+  &.ui-tabs-hide
+    display: none
+
+@mixin ui-tabs-nav
+  +pie-clearfix
+  +border-radius(0)
+  border-width: 0 0 1px 0
+  margin: 0
+  padding: 0
+  background: transparent
+  li
+    +ui-state-default
+    +border-top-radius(3px)
+    list-style: none
+    float: left
+    position: relative
+    top: 1px
+    margin: 0 .2em 1px 0
+    border-color: #a8a8a8
+    border-bottom: 0 !important
+    padding: 0
+    white-space: nowrap
+    background: #ccc url(/images/button_bg.png) 0px 0px repeat-x
+    border-color: #a8a8a8
+    &.ui-state-active
+      background: #fff
+    a
+      float: left
+      padding: .5em 1em
+      font-size: 12px
+      color: #4f4f4f !important
+      text-shadow: 0 1px 0 rgba(255,255,255,0.8)
+
+@mixin ui-widget
+  font-family: Helvetica, Arial, sans-serif
+  outline: none
+  a, :active
+    outline: none
+
+@mixin ui-widget-content
+  border: 1px solid #ddd
+  color: #333
+  a
+    color: #333
+
+@mixin ui-state-default
+  border: 1px solid #ccc
+  background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x
+  color: #5F83B9
+  a, a:link, a:visited
+    color: #1c94c4
+    text-decoration: none
+
+@mixin ui-state-active
+  background: #fff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x
+  font-weight: bold
+  color: #eb8f00
+  a, a:link, a:visited
+    color: #eb8f00
+    text-decoration: none
+
+@mixin ui-state-disabled
+  opacity: 0.35
+  filter: Alpha(Opacity=35)
+  background-image: none
+  a
+    cursor: default
